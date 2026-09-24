@@ -20,7 +20,7 @@ get_header();
     <div class="row">
       <div class="col-lg-5">
         <div class="contact-text">
-          <h4>Contacts Us hello</h4>
+          <h4>Contacts Us</h4>
 
           <?php
           if (have_rows('repeater')):
