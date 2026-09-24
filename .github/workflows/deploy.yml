@@ -1,0 +1,28 @@
+name: Automatic FTP Deploy
+
+# 1. Указываем, когда запускать автоматику
+on:
+  push:
+    branches:
+      - main # Робот сработает только тогда, когда изменения попадут в ветку main
+
+# 2. Описываем сами действия
+jobs:
+  deploy-files:
+    name: Uploading altered files
+    runs-on: ubuntu-latest # Выделяем виртуальный компьютер на Linux для работы
+
+    steps:
+      # Шаг А: Скачиваем файлы из репозитория на этот виртуальный компьютер
+      - name: Get latest code
+        uses: actions/checkout@v4
+
+      # Шаг Б: Запускаем специальный готовый скрипт синхронизации файлов по FTP
+      - name: Sync files to hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }} # Берёт адрес из ваших Secrets
+          username: ${{ secrets.FTP_USERNAME }} # Берёт логин из Secrets
+          password: ${{ secrets.FTP_PASSWORD }} # Берёт пароль из Secrets
+
+          server-dir: www/
