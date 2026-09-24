@@ -20,25 +20,25 @@ get_header();
     <div class="row">
       <div class="col-lg-5">
         <div class="contact-text">
-          <h4>Contacts Us</h4>
+          <h4>Contacts Us hello</h4>
 
           <?php
           if (have_rows('repeater')):
             while (have_rows('repeater')) : the_row(); ?>
 
               <div class="ct-item">
-            <div class="ci-icon">
-              <span class="<?php the_sub_field('pic') ?>"></span>
-            </div>
-            <div class="ci-text">
-              <ul>
-                <li>
-                  <span><?php the_sub_field('title') ?></span>
-                  <?php the_sub_field('desc') ?>
-                </li>
-              </ul>
-            </div>
-          </div>
+                <div class="ci-icon">
+                  <span class="<?php the_sub_field('pic') ?>"></span>
+                </div>
+                <div class="ci-text">
+                  <ul>
+                    <li>
+                      <span><?php the_sub_field('title') ?></span>
+                      <?php the_sub_field('desc') ?>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
           <?php endwhile;
           else :
