@@ -1,0 +1,21 @@
+/**
+ * WordPress dependencies.
+ */
+
+import { PanelBody, TextareaControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+
+export default function HelpRow(props) {
+	const { updateData, data } = props;
+
+	return (
+		<PanelBody>
+			<TextareaControl
+				label={__('Help text', 'lazy-blocks')}
+				help={__('Instructions under control', 'lazy-blocks')}
+				value={data.help}
+				onChange={(value) => updateData({ help: value })}
+			/>
+		</PanelBody>
+	);
+}

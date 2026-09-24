@@ -1,0 +1,28 @@
+/**
+ * WordPress dependencies.
+ */
+
+import { BaseControl, PanelBody, ToggleControl } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+
+export default function RequiredRow(props) {
+	const { updateData, data } = props;
+
+	return (
+		<PanelBody>
+			<BaseControl
+				id="lazyblocks-settings-row-required"
+				label={__('Required', 'lazy-blocks')}
+			>
+				<ToggleControl
+					id="lazyblocks-settings-row-required"
+					label={__('Yes', 'lazy-blocks')}
+					checked={data.required === 'true'}
+					onChange={(value) =>
+						updateData({ required: value ? 'true' : 'false' })
+					}
+				/>
+			</BaseControl>
+		</PanelBody>
+	);
+}
