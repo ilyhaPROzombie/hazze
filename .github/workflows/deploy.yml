@@ -25,4 +25,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }} # Берёт логин из Secrets
           password: ${{ secrets.FTP_PASSWORD }} # Берёт пароль из Secrets
 
-          server-dir: www/
+          server-dir: zombei.ru/
+          passive: true # Защита от зависания
