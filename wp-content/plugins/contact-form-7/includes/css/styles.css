@@ -49,8 +49,17 @@
 
 .wpcf7-form-control-wrap {
   position: relative;
-  
   margin-bottom: 15px;
+}
+
+.my-custom-captcha {
+   background: #393939;
+   color: #b3b3b3;
+   border: none;
+}
+
+my-custom-captcha-marg {
+   margin-bottom: 15px;
 }
 
 .wpcf7-not-valid-tip {
